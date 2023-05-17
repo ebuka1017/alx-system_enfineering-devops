@@ -1,2 +1,2 @@
 #!/bin/bash
-path_dirs=($(echo "$PATH" | tr ':' '\n')); num_dirs=${#path_dirs[@]}
+echo $(printf $PATH | tr ":" "\n" | wc -w)
