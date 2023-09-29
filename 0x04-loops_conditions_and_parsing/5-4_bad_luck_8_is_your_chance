@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#prints badluck on 4th iter, goodluck on 8 iter, and best school for the rest
+i=0
+while ((i<10)); do
+	if ((i==3)); then
+		echo "bad luck"
+	elif ((i==7)); then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((i++))
+done
