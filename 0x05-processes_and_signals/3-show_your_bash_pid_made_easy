@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
-#task 3
+# Task 3
 
-pid_list=$(ls /proc | grep '^[0-9]*$')
-
-for pid in $pid_list; do
-  if [ -f "/proc/$pid/cmdline" ]; then
-    process_name=$(tr '\0' ' ' < "/proc/$pid/cmdline")
+for pid in /proc/[0-9]*; do
+  if [ -f "$pid/cmdline" ]; then
+    process_name=$(tr '\0' ' ' < "$pid/cmdline")
     if [[ $process_name == *bash* ]]; then
+      pid=$(basename "$pid")
       echo "PID: $pid, Process Name: $process_name"
     fi
   fi
 done
-
