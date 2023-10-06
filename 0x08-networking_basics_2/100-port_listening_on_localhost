@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#listening on port 98 on local host
 
 # Check if running as root
 if [[ $EUID -ne 0 ]]; then
